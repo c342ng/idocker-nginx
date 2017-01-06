@@ -15,10 +15,11 @@ RUN apt-get update \
                   --with-http_perl_module \
                   --with-http_v2_module \
   && make install \
-  && export PATH=$PATH:/opt/nginx/sbin/ \
   && rm -rf /usr/src/nginx-1.11.8* \
   && rm -rf /var/lib/apt/lists/*
   
+ENV PATH $PATH:/opt/nginx/sbin/
+
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /opt/nginx/logs/access.log \
 	&& ln -sf /dev/stderr /opt/nginx/logs/error.log
