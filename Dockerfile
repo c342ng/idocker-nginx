@@ -12,6 +12,4 @@ RUN apt-get update \
                   --with-http_geoip_module \
                   --with-http_xslt_module \
                   --with-http_perl_module \
-                  --with-http_v2_module \
-                  --with-http_image_filter_module
-                  
+                  --with-http_v2_module                  
