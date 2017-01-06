@@ -8,8 +8,6 @@ RUN apt-get update \
   && ./configure --prefix=/opt/nginx \
                   --with-http_stub_status_module \
                   --with-http_ssl_module \
-                  --with-zlib \
-                  --with-pcre \
                   --with-http_geoip_module \
                   --with-http_xslt_module \
                   --with-http_perl_module \
