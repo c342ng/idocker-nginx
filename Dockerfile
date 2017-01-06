@@ -5,6 +5,7 @@ RUN apt-get update \
   && curl -fSL "http://nginx.org/download/nginx-1.11.8.tar.gz" -o /usr/src/nginx-1.11.8.tar.gz \
   && tar zxvf /usr/src/nginx-1.11.8.tar.gz -C /usr/src/ \
   && cd /usr/src/nginx-1.11.8 \
+  && make clean \
   && ./configure --prefix=/opt/nginx \
                   --with-http_stub_status_module \
                   --with-http_realip_module \
@@ -13,7 +14,7 @@ RUN apt-get update \
                   --with-http_xslt_module \
                   --with-http_perl_module \
                   --with-http_v2_module \
-  && make clean install && rm -rf /usr/src/nginx-1.11.8* \
+  && make install && rm -rf /usr/src/nginx-1.11.8* \
   && rm -rf /var/lib/apt/lists/*
   
 EXPOSE 80 443
