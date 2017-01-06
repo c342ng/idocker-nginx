@@ -18,7 +18,7 @@ RUN apt-get update \
   
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /opt/nginx/logs/access.log \
-	&& ln -sf /dev/stderr /var/log/nginx/error.log
+	&& ln -sf /dev/stderr /opt/nginx/log/error.log
   
 EXPOSE 80 443
 
